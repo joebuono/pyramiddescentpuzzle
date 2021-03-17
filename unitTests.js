@@ -1,8 +1,13 @@
 const { pyramidSolver, constructGraph } = require('./pyramidSolver');
 
-// To run the randomized unit tests, 
-// change the 'numberOfRandomTests' variable to any integer 1 <= n <= 100
-// and execute the command `node unitTests.js` in your terminal
+/*
+
+To run the randomized unit tests: 
+- change the 'numberOfRandomTests' variable to any integer 1 <= n <= 100
+- execute the command `node unitTests.js` in your terminal
+
+*/
+
 let numberOfRandomTests = 10;
 console.log(basicUnitTests(numberOfRandomTests));
 
@@ -36,7 +41,7 @@ function basicUnitTests(numberOfRandomTests) {
   return !testsFailed ? `All ${testsPassed} tests passed` : `Failed ${testsFailed}`;
 }
 
-
+// Iterative version of the depth-first search
 function getProductsOfAllPaths(node) {
   const allProducts = {};
   const stack = [{node, total: 1, path: ''}];

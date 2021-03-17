@@ -1,5 +1,5 @@
-// Pyramid Descent Puzzle
 
+// This depth-first search is the core of the solver algorithm
 function dfs(node, target, total = 1, path = []) {
   total *= node.val;
 
@@ -11,6 +11,8 @@ function dfs(node, target, total = 1, path = []) {
     return total === target ? path : null;
   }
 
+  // recursively search for a path that traverses the pyramic from top to bottom
+  // visiting numbers whose product is the given target value
   return dfs(node.left, target, total, path.concat('L')) ||
          dfs(node.right, target, total, path.concat('R'));
 }
